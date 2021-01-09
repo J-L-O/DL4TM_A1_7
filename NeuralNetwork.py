@@ -49,8 +49,8 @@ class NeuralNetwork(object):
         for epoch in range(epochs):
             print(f"Starting epoch {epoch}/{epochs}")
             for batch in range(batches_per_epoch):
-                x_batch = x[batch_size * 10:(batch_size + 1) * 10]
-                y_batch = y[batch_size * 10:(batch_size + 1) * 10]
+                x_batch = x[batch * batch_size:(batch + 1) * batch_size]
+                y_batch = y[batch * batch_size:(batch + 1) * batch_size]
 
                 y_hat = self._feedforward(x_batch)
 
